@@ -122,7 +122,7 @@ export class PerfumeriaComponent implements OnInit, AfterViewInit{
       if (item.quantity == undefined){
         item.quantity = 1
       }
-      message += `\n- ${item.DESCRIPCION} x ${item.quantity} unidades\n`;
+      message += `\n- ${item.Producto} x ${item.quantity} unidades\n`;
     }
     message += `por un total de $ ${(this.totalGeneral*0.985).toFixed(2)}`
     const whatsappUrl = `https://api.whatsapp.com/send?phone=+543816151809&text=${encodeURIComponent(message)}`;

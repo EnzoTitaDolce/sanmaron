@@ -10,8 +10,8 @@
 },
 {"ruta":"gel_limpienza.jpg",
 "Producto":"gel limpienza",
-"descripcion":"gel limpienza",
-"Costo":"200"
+"descripcion":"Envase x 120g",
+"Costo":"7500"
 },
 {"ruta":"locion_descongestiva.jpg",
 "Producto":"locion descongestiva",
@@ -20,18 +20,18 @@
 },
 {"ruta":"linea_solar.jpg",
 "Producto":"linea solar",
-"descripcion":"linea solar",
-"Costo":"200"
+"descripcion":"Protector Solar 65fps x 60g o 130g",
+"Costo":"10000"
 },
 {"ruta":"serun_niacinamida.jpg",
-"Producto":"serun niacinamida",
-"descripcion":"serun niacinamida",
-"Costo":"200"
+"Producto":"serum niacinamida",
+"descripcion":"Envase x 30ml",
+"Costo":"15000"
 },
 {"ruta":"antiage_nocturno.jpg",
 "Producto":"antiage nocturno",
-"descripcion":"antiage nocturno",
-"Costo":"200"
+"descripcion":"Envase x 30g",
+"Costo":"9500"
 },
 {"ruta":"crema_nutritiva_dia.jpg",
 "Producto":"crema nutritiva_dia",
@@ -40,8 +40,8 @@
 },
 {"ruta":"serum_acido_glicolico.jpg",
 "Producto":"serum acido glicolico",
-"descripcion":"serum acido glicolico",
-"Costo":"200"
+"descripcion":"Envase x 30ml",
+"Costo":"15000"
 },
 {"ruta":"linea_solar_toque_seco.jpg",
 "Producto":"linea solar toque seco",

@@ -1,0 +1,52 @@
+<body>
+  <main>
+    <section id="sanmaron">
+      <h2>Farmacia</h2>
+      <h1>San Marón</h1>
+    </section>
+    <section aria-labelledby="descuentos" id="descuentos-section">
+      <h1 id="descuentos">¡Bienvenidos!</h1>
+    </section>
+
+    <section aria-labelledby="introduccion-productos">
+      <p>Conocé nuestras categorías:</p>
+    </section>
+    <section aria-labelledby="preparados">
+      <h4 id="preparados" class="titulo">Preparados</h4>
+      <div class="carousel" aria-labelledby="preparados">
+        <!-- Contenido del carrusel de imágenes de desodorantes -->
+        <div class="carousel-images2">
+          <div id="preparados-carrousel">
+            <img src="../../assets/img/preparados/1.jpg" alt="Imagen 1" class="carousel-images-img">
+            <img src="../../assets/img/preparados/2.jpg" alt="Imagen 2" class="carousel-images-img">
+            <img src="../../assets/img/preparados/3.jpg" alt="Imagen 3" class="carousel-images-img">
+            <img src="../../assets/img/preparados/4.jpg" alt="Imagen 4" class="carousel-images-img">
+            <img src="../../assets/img/preparados/5.jpg" alt="Imagen 5" class="carousel-images-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="desodorantes">
+      <h4 id="desodorantes" class="titulo">Desodorantes</h4>
+      <div class="carousel" aria-labelledby="desodorantes">
+        <div #imagenes class="carousel-images">
+          <!-- Contenido del carrusel de imágenes de desodorantes -->
+           <img [src]="'../../assets/img/desodorantes/'+ listaImagenes[posicionActual]" alt="Imagen 1" class="carousel-images-img">
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="perfumes">
+      <h4 id="perfumes" class="titulo">Perfumes</h4>
+      <div class="carousel" aria-labelledby="perfumes">
+        <div #perfumes class="carousel-images">
+          <!-- Contenido del carrusel de imágenes de perfumes -->
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+

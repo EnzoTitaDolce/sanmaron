@@ -1,0 +1,121 @@
+<main>
+  <section aria-labelledby="productos">
+    <h1 id="productos">Nuestros Productos</h1>
+  </section>
+
+  <section id="filtros" *ngIf="marcas" aria-labelledby="filtrado">
+    <h2 id="filtrado">Filtros</h2>
+    <div id="search" #buscador>
+      <label for="buscarProducto">Buscar producto:</label>
+      <input
+        id="buscarProducto"
+        type="search"
+        [(ngModel)]="searchQuery"
+        (input)="filteredData()"
+        (change)="filteredData()"
+        placeholder="Buscar producto..."
+        aria-label="Buscar productos en la lista"
+      />
+    </div>
+
+  </section>
+
+  <button class="btn btn-primary" (click)="openCart()" id="boton_carrito">Ver Carrito</button>
+
+  <div *ngIf="isLoading" class="loading-message">
+    <h3 class="typewriter">Te ofrecemos 15.000 productos... Aguardá mientras cargan, por favor</h3>
+  </div>
+  <section *ngIf="data && !isLoading" aria-labelledby="tabla-productos">
+    <h2 id="tabla-productos">Listado de Productos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>+</th>
+            <th>Cant.</th>
+            <th>Producto</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of dataFiltrada; let i = index">
+            <tr>
+              <td>
+                <img
+                  src="../../assets/img/—Pngtree—vector add to cart vector_4142516.png"
+                  alt="Agregar al carrito"
+                  (click)="toggleItemSelection(item)"
+                  id="cartIcon"
+                  [class.selected]="isChecked(item)"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  [(ngModel)]="item.quantity"
+                  id="{{item.Producto}}"
+                  (change)="updateQuantity(item)"
+                  value="1"
+                />
+              </td>
+              <td>{{ item.Producto }}</td>
+              <td>$ {{ item.Costo.toFixed(0) }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+
+
+
+  </section>
+
+  <section aria-labelledby="carrito" class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h2 id="cartModalLabel">Carrito de Compras</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </header>
+        <div class="modal-body">
+          <table class="table table-bordered responsiveModalTable">
+            <thead>
+              <tr>
+                <th>Descripción</th>
+                <th>Precio Unitario</th>
+                <th>Cant.</th>
+                <th>Total</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of cart">
+                <td>{{ item.Producto }}</td>
+                <td>$ {{ (item.Costo * 1).toFixed(2) }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>$ {{ (item.Costo * 1 * item.quantity).toFixed(2) }}</td>
+                <td id="eliminar">
+                  <button
+                    class="btn btn-danger btn-sm"
+                    (click)="removeItemFromCart(item)"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <h3>Total General: $ {{ totalGeneral.toFixed(2) }}</h3>
+          </div>
+        </div>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeCart()">
+            Cerrar
+          </button>
+          <button type="button" class="btn btn-primary" (click)="sendWhatsApp()">
+            Enviar
+          </button>
+        </footer>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,257 @@
+body{
+  width: 100%;
+  background-color: whitesmoke;
+  color: #333333;
+  border-radius: 0px;
+  text-align: center;
+}
+h1{
+  color:#1c6c38;
+  border-radius: 10px 10px 0px 0px;
+  font-family: 'merriwheater';
+  font-weight: bold;
+  font-size: 2.4rem;
+  text-align: center;
+}
+h2{
+  /*background-color:#CBC3E3;
+  padding: 3px;
+  margin: 0;
+  font-family: 'Bona Nova SC';*/
+  background-color: #4CAF50;
+  color:#FFFFFF;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-family: 'Bona Nova SC';
+  width: 100vw;
+}
+main{
+  background-color: whitesmoke;
+}
+#cartIcon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#cartIcon.selected {
+  transform: scale(1.2);
+  opacity: 0.8;
+  mix-blend-mode:color-burn;
+}
+#instrucciones {
+  text-align: left;
+
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(59, 59, 197);
+  margin: 20px;
+}
+
+#instrucciones li {
+  margin-bottom: 10px;
+}
+#filtros{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  text-align: center;
+}
+#filtroAnimal{
+
+  padding: 10px;
+}
+
+#filtroMarca{
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+ul li{
+  margin:5px;
+}
+table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:whitesmoke;
+  border-collapse: collapse;
+  color: #000000;
+  font-weight: bolder;
+}
+table tr:nth-child(odd) {
+  background-color:#1c6c38; /* Color amarillo para filas impares */
+  color:whitesmoke;
+}
+
+.typewriter h3 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+.loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin: 20px 0;
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+table tr:nth-child(even) {
+  background-color: whitesmoke;/* Color naranja para filas pares */
+  color:#1c6c38
+}
+table tr:hover{
+  background-color: navy;
+  color: white;
+}
+th, td {
+  border: 1px solid black;
+  text-align: center;
+  text-wrap: wrap;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+#cartIcon{
+  width: 70%;
+  mix-blend-mode:color-dodge;
+}
+
+#cartModal{
+  color: black;
+}
+
+
+@media screen and (max-width:540px){
+
+  .hide-col{
+    display:none
+  }
+
+table tr th:nth-of-type(1){
+  width:10px
+}
+table tr td:nth-of-type(1){
+  width: 10%;
+}
+
+table tr td:nth-of-type(1) img{
+  width: 10%;
+}
+
+table tr th:nth-of-type(2){
+  width:10%
+}
+table tr td:nth-of-type(2){
+  width: 10%;
+}
+table td:nth-of-type(3){
+  word-break: break-word;
+  width: auto;
+}
+
+table tr th:nth-of-type(4){
+  width:auto
+}
+table tr td :nth-of-type(4){
+  width:auto
+}
+
+#filtros{
+  display: flex;
+  flex-direction: column;
+}
+#marca{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#marca img{
+  width:10%;
+}
+
+.menu {
+  opacity: 1;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.menu.hidden {
+  opacity: 0;
+  height: 0;
+}
+input[type='number']{
+  width: 100%;
+  padding:0;
+  margin:0
+}
+input[type='number']:hover{
+  color:white;
+}
+
+table tr:hover{
+  background-color: navy;
+  color: white;
+}
+
+input[type='number']:focus{
+  color:white;
+  background-color: #000000;
+}
+
+.responsiveModalTable{
+  font-size: xx-small;
+  padding: 0;
+  margin: 0;
+  text-wrap: wrap;
+}
+.responsiveModalTable td{
+  padding: 0;
+  margin: 0;
+  text-wrap: wrap;
+
+}
+.responsiveModalTable th{
+  padding: 0;
+  margin: 0;
+  text-wrap: wrap;
+
+}
+
+#eliminar{
+  display: flex;
+}
+
+#boton_carrito{
+  position: sticky;
+  top:118px;
+}
+}

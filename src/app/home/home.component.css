@@ -1,0 +1,160 @@
+body{
+  border-radius: 0px;
+  background-color: whitesmoke;
+  color: #333333;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  text-align: center;
+}
+h1{
+  /*color:#3D3D4E; VERDE OSCURO*/
+  /*color:#b01919; ROJO*/
+  /*color:#dc2d2e; ROJO FUERTE*/
+  /*color:#21773b;*/
+  color:#1c6c38;
+  text-align: center;
+  animation-duration: 2s;
+  animation-name: colors;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+  font-weight: bolder;
+}
+h2{
+  margin-top: 100px;
+  font-size: 1rem;
+  margin:0;
+  color:#3D3D4E;
+}
+.titulo{
+  background-color: #4CAF50;
+  color:#FFFFFF;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-family: 'Bona Nova SC';
+  width: 100vw;
+}
+.carousel {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  border-radius: 10px;
+}
+.carousel-images {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin:auto;
+  height: 50vh;
+  margin-bottom: 20px;
+}
+
+/* Contenedor principal del carrusel */
+.carousel-images2 {
+  width: 80%;
+  margin: auto;
+  overflow: hidden; /* Oculta imágenes fuera de la vista */
+  position: relative;
+  height: 50vh;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+/* Contenedor interno que se desliza */
+#preparados-carrousel {
+  display: flex;
+  width: calc(100% * 5); /* Ajusta el ancho según la cantidad de imágenes */
+  animation: carrusel 10s linear infinite;
+  gap:1px;
+}
+
+/* Estilos de las imágenes */
+.carousel-images-img {
+  width: 11%;
+  height: 10%;
+  object-fit: contain; /* Asegura que las imágenes se ajusten al contenedor */
+
+  flex: 0 0 20%; /* Cada imagen ocupa todo el ancho visible */
+}
+
+/* Animación del carrusel */
+@keyframes carrusel {
+  0% { transform: translateX(0); }         /* Imagen 1 */
+  16% { transform: translateX(0); }       /* Pausa en la primera imagen */
+
+  20% { transform: translateX(-20%); }    /* Transición a la imagen 2 */
+  36% { transform: translateX(-20%); }    /* Pausa en la segunda imagen */
+
+  40% { transform: translateX(-40%); }    /* Transición a la imagen 3 */
+  56% { transform: translateX(-40%); }    /* Pausa en la tercera imagen */
+
+  60% { transform: translateX(-60%); }    /* Transición a la imagen 4 */
+  76% { transform: translateX(-60%); }    /* Pausa en la cuarta imagen */
+
+  80% { transform: translateX(-80%); }    /* Transición a la imagen 5 */
+  96% { transform: translateX(-80%); }    /* Pausa en la quinta imagen */
+
+  100% { transform: translateX(0); }      /* Vuelve a la primera imagen */
+}
+
+
+
+@keyframes slide {
+  0% { transform: translateX(0); }        /* Imagen 1 */
+  12.5% { transform: translateX(0); }     /* Pausa en imagen 1 */
+
+  17.5% { transform: translateX(-100%); } /* Transición a imagen 2 */
+  30% { transform: translateX(-100%); }   /* Pausa en imagen 2 */
+
+  35% { transform: translateX(-200%); }   /* Transición a imagen 3 */
+  47.5% { transform: translateX(-200%); } /* Pausa en imagen 3 */
+
+  52.5% { transform: translateX(-300%); } /* Transición a imagen 4 */
+  65% { transform: translateX(-300%); }   /* Pausa en imagen 4 */
+
+  70% { transform: translateX(0); }       /* Transición de vuelta a imagen 1 */
+  100% { transform: translateX(0); }      /* Fin del ciclo */
+}
+
+#sanmaron{
+  animation: aparecer 5s;
+  animation-fill-mode: forwards;
+}
+#descuentos-section{
+  animation: subir 5s forwards;
+  animation-delay: 3s;
+  opacity: 0;
+}
+@keyframes subir {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(-40px);
+    display: none;
+  }
+
+}
+
+@keyframes aparecer {
+
+  0%{
+    transform: translateY(-200px);
+  }
+  50%{
+    transform: translateY(-25px);
+  }
+  100%{
+    transform: translateX(110vw);
+    display: none;
+  }
+
+}

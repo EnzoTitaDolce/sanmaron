@@ -1,0 +1,69 @@
+<h1>Nuestros Preparados</h1>
+
+<button class="btn btn-primary" (click)="openCart()" id="boton_carrito">Ver Carrito</button>
+
+<ng-container *ngFor="let item of data">
+
+  <figure class="producto-card">
+    <h2>{{item.Producto}}</h2>
+    <img src="../../assets/img/preparados/{{item.ruta}}" class="">
+    <figcaption>{{item.descripcion}}</figcaption>
+    <figcaption>${{item.Costo}}
+      <button (click)="toggleItemSelection(item)" id="cartIcon" [class.selected]="isChecked(item)">Agregar al carrito</button>
+      <!-- <img src="../../assets/img/—Pngtree—vector add to cart vector_4142516.png" alt="Agregar al carrito"
+      (click)="toggleItemSelection(item)" id="cartIcon" [class.selected]="isChecked(item)"/> -->
+    </figcaption>
+  </figure>
+
+</ng-container>
+<section aria-labelledby="carrito" class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="cartModalLabel">Carrito de Compras</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </header>
+      <div class="modal-body">
+        <table class="table table-bordered responsiveModalTable">
+          <thead>
+            <tr>
+              <th>Descripción</th>
+              <th>Precio Unitario</th>
+              <th>Cant.</th>
+              <th>Total</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cart">
+              <td>{{ item.Producto }}</td>
+              <td>$ {{ (item.Costo * 1).toFixed(2) }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>$ {{ (item.Costo * 1 * item.quantity).toFixed(2) }}</td>
+              <td id="eliminar">
+                <button
+                  class="btn btn-danger btn-sm"
+                  (click)="removeItemFromCart(item)"
+                >
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <h3>Total General: $ {{ totalGeneral.toFixed(2) }}</h3>
+        </div>
+      </div>
+      <footer class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeCart()">
+          Cerrar
+        </button>
+        <button type="button" class="btn btn-primary" (click)="sendWhatsApp()">
+          Enviar
+        </button>
+      </footer>
+    </div>
+  </div>
+</section>
+
